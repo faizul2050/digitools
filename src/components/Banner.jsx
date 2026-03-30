@@ -1,4 +1,4 @@
-// Banner — Hero section,
+import bannerImg from "../assets/banner.png";
 
 function Banner() {
   return (
@@ -6,7 +6,6 @@ function Banner() {
       
       {/* Left side — text */}
       <div>
-        {/*  badge */}
         <div className="inline-flex items-center gap-2 bg-violet-100 border border-violet-200 text-violet-700 text-xs font-semibold px-3 py-1 rounded-full mb-5">
           <span className="w-2 h-2 bg-violet-600 rounded-full animate-pulse"></span>
           New AI Powered Tools Available
@@ -30,10 +29,17 @@ function Banner() {
         </div>
       </div>
 
-      {/* Right side — image/illustration */}
-      <div className="bg-gradient-to-br from-violet-200 to-violet-300 rounded-2xl flex items-center justify-center min-h-[300px] relative overflow-hidden">
-        <div className="text-8xl animate-bounce">🚀</div>
+      {/* Right side — image with Pulse Border */}
+      <div className="flex items-center justify-center">
+        <div className="rounded-2xl p-[3px] border-2 border-violet-500 animate-pulse">
+          <img 
+            src={bannerImg} 
+            alt="Banner" 
+            className="rounded-2xl w-[400px] h-[300px] object-cover"
+          />
+        </div>
       </div>
+
     </div>
   );
 }
