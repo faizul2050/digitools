@@ -5,7 +5,7 @@ import "react-toastify/dist/ReactToastify.css";
 // 1. Ensure data import
 import PRODUCTS from "./data/products"; 
 
-// 2. Component imports (paths based on your folder structure)
+// 2. Component imports
 import Navbar from "./components/Navbar"; 
 import Banner from "./components/Banner";
 import Stats from "./components/Stats";
@@ -35,15 +35,16 @@ function App() {
   const handleCheckout = () => {
     toast.success("✅ Order placed! Thank you for your purchase.");
     setCart([]);
-    setView("products"); // Redirect to home/products after checkout
+    setView("products"); 
   };
 
   return (
     <div className="min-h-screen bg-white">
-      {/* ToastContainer must be at the top of the return statement */}
       <ToastContainer position="top-right" autoClose={2800} />
       
-      <Navbar cartCount={cart.length} />
+      {/* Navbar এ cartCount এর সাথে setView ও পাঠিয়ে দিলাম */}
+      <Navbar cartCount={cart.length} setView={setView} />
+      
       <Banner />
       <Stats />
 
@@ -83,7 +84,6 @@ function App() {
           {/* Content Rendering */}
           {view === "products" ? (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {/* Check and Map PRODUCTS data */}
               {PRODUCTS && PRODUCTS.length > 0 ? (
                 PRODUCTS.map((product) => (
                   <ProductCard key={product.id} product={product} onBuy={handleBuy} />

@@ -1,11 +1,14 @@
-// Navbar ,
+import React from "react";
 
-function Navbar({ cartCount }) {
+function Navbar({ cartCount, setView }) {
   return (
     <nav className="sticky top-0 z-50 bg-white/95 backdrop-blur border-b border-gray-200 px-[5%] h-16 flex items-center justify-between">
       
-      {/* Logo */}
-      <div className="font-extrabold text-2xl text-violet-600 tracking-tight">
+      {/* Logo - ক্লিক করলে প্রোডাক্ট পেজে ফিরবে */}
+      <div 
+        onClick={() => setView("products")} 
+        className="font-extrabold text-2xl text-violet-600 tracking-tight cursor-pointer"
+      >
         DigiTools
       </div>
 
@@ -13,7 +16,14 @@ function Navbar({ cartCount }) {
       <ul className="hidden md:flex gap-7 list-none">
         {["Products", "Features", "Pricing", "Testimonials", "FAQ"].map((link) => (
           <li key={link}>
-            <a href="#" className="text-gray-500 text-sm font-medium hover:text-violet-600 no-underline transition-colors">
+            <a 
+              href="#" 
+              onClick={(e) => {
+                e.preventDefault();
+                if(link === "Products") setView("products");
+              }}
+              className="text-gray-500 text-sm font-medium hover:text-violet-600 no-underline transition-colors"
+            >
               {link}
             </a>
           </li>
@@ -29,8 +39,11 @@ function Navbar({ cartCount }) {
           Get Started
         </button>
 
-        {/* Cart Button — cartCount prop থেকে সংখ্যা দেখায় */}
-        <button className="relative flex items-center gap-2 text-sm border border-gray-200 rounded-full px-4 py-2 hover:border-violet-600 hover:text-violet-600 transition-colors bg-white cursor-pointer">
+        {/* Cart Button — ক্লিক করলে কার্ট ভিউ ওপেন হবে */}
+        <button 
+          onClick={() => setView("cart")}
+          className="relative flex items-center gap-2 text-sm border border-gray-200 rounded-full px-4 py-2 hover:border-violet-600 hover:text-violet-600 transition-colors bg-white cursor-pointer"
+        >
           🛒 Cart
           {cartCount > 0 && (
             <span className="absolute -top-2 -right-2 bg-violet-600 text-white text-xs font-bold w-5 h-5 rounded-full flex items-center justify-center border-2 border-white">
