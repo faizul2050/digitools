@@ -1,16 +1,16 @@
-# React + Vite
+# DigiTools - Digital Product Marketplace
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A simple yet powerful React-based web application to browse and purchase digital products.
 
-Currently, two official plugins are available:
+### 🛠️ Technologies Used
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- **React.js** (Vite)
+- **Tailwind CSS** & **DaisyUI**
+- **React-Toastify**
+- **JSON Data**
 
-## React Compiler
+### ✨ Key Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+1. **Dynamic Toggling:** Switch between Product Listing and Cart view without page reload.
+2. **Interactive Cart:** Add/Remove items and see real-time price calculation.
+3. **Responsive Design:** Fully optimized for Mobile, Tablet, and Desktop views.
